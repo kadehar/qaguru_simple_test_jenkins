@@ -29,13 +29,16 @@ tasks.withType(Test) {
     testLogging {
         lifecycle {
             events "started", "skipped", "failed", "standard_error", "standard_out"
-            exceptionFormat "short"
+            exceptionFormat "full"
         }
     }
 }
 
 task simple_tests(type: Test) {
     useJUnitPlatform {
+        testLogging {
+            showStandardStreams = true
+        }
         includeTags 'simple_tests'
         excludeTags 'not_you'
     }
@@ -43,6 +46,7 @@ task simple_tests(type: Test) {
 
 task apple_tests(type: Test) {
     useJUnitPlatform {
+        enableAssertions = true
         includeTags 'apple_tag'
     }
 }
