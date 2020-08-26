@@ -36,9 +36,6 @@ tasks.withType(Test) {
 
 task simple_tests(type: Test) {
     useJUnitPlatform {
-        testLogging {
-            showStandardStreams = true
-        }
         includeTags 'simple_tests'
         excludeTags 'not_you'
     }
@@ -46,7 +43,6 @@ task simple_tests(type: Test) {
 
 task apple_tests(type: Test) {
     useJUnitPlatform {
-        enableAssertions = true
         includeTags 'apple_tag'
     }
 }
