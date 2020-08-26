@@ -17,6 +17,7 @@ public class SimpleTests {
     }
 
     @Test
+    @Tag("not_you")
     void negativeTest() {
         int a = 2, b = 3;
 
